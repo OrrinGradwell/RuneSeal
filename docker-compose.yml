@@ -18,7 +18,7 @@ services:
     container_name: runeseal-api
     restart: unless-stopped
     ports:
-      - "8443:8443"
+      - "25601:8000"
     depends_on:
       - runeseal-db
     env_file:
