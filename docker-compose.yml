@@ -1,0 +1,30 @@
+services:
+  runeseal-db:
+    image: postgres:14
+    container_name: runeseal-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-runeseal}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-runeseal_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  runeseal-api:
+    build:
+      context: ./runeseal-core
+    container_name: runeseal-api
+    restart: unless-stopped
+    ports:
+      - "8443:8443"
+    depends_on:
+      - runeseal-db
+    env_file:
+      - .env
+    volumes:
+      - ./runeseal-core/runeseal_core:/app/runeseal_core:ro
+
+volumes:
+  postgres_data:

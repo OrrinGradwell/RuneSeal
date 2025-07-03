@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Env/config
+.env
+.runesealrc
+.runeseal/
+
+# Bytecode
+*.log
+*.sqlite3
+*.db
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python virtualenv
+.venv/
+env/
+
+*egg-info*
