@@ -1,6 +1,6 @@
 import os
-import jwt
 
+import jwt
 from fastapi import APIRouter, Depends, HTTPException, status
 from passlib.hash import argon2
 from pydantic import BaseModel
@@ -50,7 +50,11 @@ def login(data: LoginRequest, db: Session = Depends(get_db)):
         )
 
     jwt_secret = os.getenv("JWT_SECRET", "changeme_this_is_dev_only")
-    token = jwt.encode({"sub": str(user.id)}, jwt_secret, algorithm="HS256")
+    token = jwt.encode(
+        {"sub": str(user.id), "is_admin": user.is_admin},  # <-- add is_admin
+        jwt_secret,
+        algorithm="HS256",
+    )
 
     return TokenResponse(
         access_token=token,

@@ -1,4 +1,6 @@
-# RuneSeal 🪙
+# RuneSeal
+
+![RuneSeal Logo](assets/RuneSeal_Logo.png)
 
 **CLI-first, containerized, and cryptographically mindful secrets vault.**
 
@@ -31,15 +33,15 @@ TBA
 
 ## 🧾 License and Attribution
 
-RuneSeal is open source and free to use or modify, provided that:  
-The name “RuneSeal” is preserved  
-The original creator, Orrin Gradwell, is credited  
+RuneSeal is open source and free to use or modify, provided that:
+The name “RuneSeal” is preserved
+The original creator, Orrin Gradwell, is credited
 
 See LICENSE for full details.
 
 ## 💼 Built by
 
-Orrin Gradwell – System architect, CLI sorcerer, Fanatic Tester and relentless fortress-hardened mind.  
+Orrin Gradwell – System architect, CLI sorcerer, Fanatic Tester and relentless fortress-hardened mind.
 Copilot – Technical advisor, sidekick, spell-checker, and pun supplier.
 
 ## 🛡️ Design Philosophy

@@ -1,6 +1,6 @@
 import os
-
 from typing import Annotated, List
+
 from fastapi import APIRouter, Depends, Header, HTTPException, status
 from jose import JWTError, jwt
 from pydantic import BaseModel
@@ -31,7 +31,12 @@ def get_current_user(
             os.getenv("JWT_SECRET", "changeme_this_is_dev_only"),
             algorithms=["HS256"],
         )
-        user_id = int(payload.get("sub"))
+        sub = payload.get("sub")
+        if sub is None:
+            raise HTTPException(
+                status_code=401, detail="Invalid token: missing subject"
+            )
+        user_id = int(sub)
         user = db.query(models.User).filter(models.User.id == user_id).first()
         if user is None:
             raise HTTPException(status_code=401, detail="User not found")
