@@ -1,14 +1,12 @@
 import json
-from getpass import getpass
-
 import requests
 import typer
-from rich import print
 
+from getpass import getpass
+from rich import print
 from runeseal.config import DEFAULT_API_URL, SESSION_FILE
 
 app = typer.Typer(help="🔐 Log in to your RuneSeal vault")
-
 
 @app.command("login")
 def login(

@@ -1,5 +1,4 @@
 from typing import List
-
 from fastapi import APIRouter, Depends, HTTPException, Path, status
 from passlib.hash import argon2
 from pydantic import BaseModel
@@ -25,7 +24,7 @@ class InitRequest(BaseModel):
     admin_username: str
     admin_password: str
     system_password: str
-    x_api_key: str = None
+    # x_api_key: str = None
 
 
 @router.post("/init", dependencies=[Depends(verify_api_key)])

@@ -1,6 +1,6 @@
 # 🔐 RuneSeal Core
 
-This is the FastAPI backend service for [RuneSeal](../README.md)—a CLI-first, containerized secrets vault system.
+This is the FastAPI backend service for [RuneSeal](../README.md) — a CLI-first, containerized secrets vault system.
 
 ---
 

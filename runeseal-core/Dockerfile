@@ -1,4 +1,4 @@
-FROM python:3.13-slim
+FROM python:3.13-bookworm
 WORKDIR /app
 COPY ./runeseal_core /app/runeseal_core
 COPY ./requirements.txt /app/requirements.txt

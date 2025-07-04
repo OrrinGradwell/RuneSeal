@@ -5,7 +5,3 @@ target-version = ['py38']
 [tool.isort]
 profile = "black"
 known_third_party = ["typer", "requests", "fastapi", "sqlalchemy"]
-
-[tool.flake8]
-max-line-length = 88
-extend-ignore = ["E203", "W503"]

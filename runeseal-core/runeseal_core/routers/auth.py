@@ -1,6 +1,6 @@
 import os
-
 import jwt
+
 from fastapi import APIRouter, Depends, HTTPException, status
 from passlib.hash import argon2
 from pydantic import BaseModel
@@ -37,7 +37,7 @@ class LoginRequest(BaseModel):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"
-    api_key: str = None  # Optional: include X-API-Key in response
+    # api_key: str = None  # Optional: include X-API-Key in response
 
 
 @router.post("/login", response_model=TokenResponse)
@@ -54,7 +54,7 @@ def login(data: LoginRequest, db: Session = Depends(get_db)):
 
     return TokenResponse(
         access_token=token,
-        api_key=os.getenv("X_API_KEY"),  # Optional header used elsewhere
+        # api_key=os.getenv("X_API_KEY"),  # Optional header used elsewhere
     )
 
 

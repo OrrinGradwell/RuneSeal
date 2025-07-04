@@ -1,7 +1,8 @@
 # RuneSeal 🪙
 
 **CLI-first, containerized, and cryptographically mindful secrets vault.**
-Built for developers, by developers—with no browser UI, no gimmicks, and no compromise on control.
+
+Built for developers, by developers — with no browser UI, no gimmicks, and no compromise on control.
 
 ---
 
@@ -22,59 +23,30 @@ RuneSeal is a self-hosted secrets vault tailored for command-line workflows, aut
 
 ---
 
-## 📦 Structure
-runeseal/
-    ├── runeseal-core/ # FastAPI backend
-    ├── runeseal/ # Typer-based CLI tool (alias: rs)
-    ├── docker-compose.yml
-    ├── .env.sample
-    ├── setup.py
-    ├── LICENSE
-    └── docs/
-    └── architecture.md
-
----
-
 ## 🎮 Quick Start
 
 ```bash
-# Clone and configure
-cp .env.sample .env
-
-# Spin up the services
-docker compose up -d
-
-# Bootstrap with your master password
-runeseal admin init --from-file core_passwords.yaml
-
-# You're live 🎉
-runeseal login
-runeseal secret add
+TBA
 ```
 
-🧾 License and Attribution
-RuneSeal is open source and free to use or modify, provided that:
+## 🧾 License and Attribution
 
-The name “RuneSeal” is preserved
-
-The original creator, Orrin Gradwell, is credited
+RuneSeal is open source and free to use or modify, provided that:  
+The name “RuneSeal” is preserved  
+The original creator, Orrin Gradwell, is credited  
 
 See LICENSE for full details.
 
-💼 Built by
-Orrin Gradwell – System architect, CLI sorcerer, and relentless fortress-hardened mind.
+## 💼 Built by
 
+Orrin Gradwell – System architect, CLI sorcerer, Fanatic Tester and relentless fortress-hardened mind.  
 Copilot – Technical advisor, sidekick, spell-checker, and pun supplier.
 
-🪙 Powered by Rune and Reason.
+## 🛡️ Design Philosophy
 
-🛡️ Design Philosophy
 RuneSeal Core prioritizes:
 
-Minimal dependencies (FastAPI, SQLAlchemy, JWT, Argon2)
-
-API-only focus—no web views, just pure data exchange
-
-Explicit ownership and auditability of actions
-
-Easy containerization for Unraid or custom Docker hosts
+- Minimal dependencies (FastAPI, SQLAlchemy, JWT, Argon2)
+- API-only focus—no web views, just pure data exchange
+- Explicit ownership and auditability of actions
+- Easy containerization for Unraid or custom Docker hosts

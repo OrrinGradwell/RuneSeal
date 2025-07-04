@@ -6,9 +6,9 @@ setup(
     name="runeseal",
     version="1.0.0",
     description="RuneSeal CLI: Secure, headless secrets vault client.",
-    author="Orrin",
-    author_email="orrin@example.com",  # Replace with yours
-    url="https://github.com/YOUR_GITHUB/runeseal",  # Set correct URL
+    author="Orrin Gradwell",
+    author_email="orrin.gradwell@gmail.com",
+    url="https://github.com/OrrinGradwell/RuneSeal#",
     packages=find_packages(),
     install_requires=[
         "typer[all]>=0.9.0",
@@ -27,9 +27,5 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.10",
 )
-
-# Once this is in place, run this from your project root to install globally (during dev or for users with Python):
-# pip install .
-# And voilà—you’ll be able to invoke runeseal or rs from anywhere on your system.

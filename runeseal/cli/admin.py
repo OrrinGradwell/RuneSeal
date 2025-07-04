@@ -1,14 +1,12 @@
-from pathlib import Path
-
 import requests
 import typer
 import yaml
-from rich import print
 
+from rich import print
+from pathlib import Path
 from runeseal.config import DEFAULT_API_URL
 
 app = typer.Typer(help="🛠️ Administrative commands for RuneSeal")
-
 
 @app.command("init")
 def init_admin(

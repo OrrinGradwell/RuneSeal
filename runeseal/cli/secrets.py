@@ -1,20 +1,17 @@
 import json
-
 import requests
 import typer
-from rich import print
 
+from rich import print
 from runeseal.config import DEFAULT_API_URL, SESSION_FILE
 
 app = typer.Typer(help="🔑 Manage secrets in RuneSeal")
-
 
 def load_session():
     if not SESSION_FILE.exists():
         print("[red]❌ No session found. Please log in first.[/red]")
         raise typer.Exit(code=1)
     return json.loads(SESSION_FILE.read_text())
-
 
 @app.command("add")
 def add_secret(
@@ -40,7 +37,6 @@ def add_secret(
         print(f"[red]❌ Failed to store secret: {e}[/red]")
         raise typer.Exit(code=1)
 
-
 @app.command("list")
 def list_secrets(
     api_url: str = typer.Option(
@@ -64,7 +60,6 @@ def list_secrets(
     except requests.exceptions.RequestException as e:
         print(f"[red]❌ Failed to list secrets: {e}[/red]")
         raise typer.Exit(code=1)
-
 
 @app.command("delete")
 def delete_secret(

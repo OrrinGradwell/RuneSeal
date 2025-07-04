@@ -1,6 +1,6 @@
 import os
-from typing import Annotated, List
 
+from typing import Annotated, List
 from fastapi import APIRouter, Depends, Header, HTTPException, status
 from jose import JWTError, jwt
 from pydantic import BaseModel
